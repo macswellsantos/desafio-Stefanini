@@ -1,0 +1,41 @@
+<div ng-controller="ListaController as vm" class="row justify-content-center align-items-center login-row" ng-init="vm.iniciar()">
+    <div class="col">
+        
+        <div class="container mx-auto py-5 mt-5 jumbotron" style="width: 600px;">
+          <h3 class="text-center text-uppercase">Clientes</h3>
+            <button class="btn btn-primary" ng-click="vm.go('/clientes/Cadastro')">Novo </button>
+            <table class="table table-dark">
+                <thead> 
+                  <tr ng-show="vm.listarCliente!=0">
+                    <th scope="col">CPF</th>
+                    <th scope="col">NOME</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Ações</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr ng-repeat="cliente in vm.listarCliente">
+                    <td>{{cliente.cpf}}</td>
+                    <td>{{cliente.nome}}</td>
+                    <td>{{cliente.email}}</td>
+                    <td>
+                        <button class="btn" style="padding: 0px" ng-click="vm.deletar(cliente.cpf)">
+                            <i class="material-icons md-18">delete</i></button>
+                        <button class="btn" style="padding: 0px 5px" ng-click="vm.alterar(cliente.cpf)">
+                            <i class="material-icons md-18">edit</i></button>
+                    </td>
+                  </tr>
+                  
+                <tr >
+                  <td ng-show="vm.listarCliente==0">
+                    Sem clientes cadastrados.                
+                  </td>
+                </tr>
+                  
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</div>

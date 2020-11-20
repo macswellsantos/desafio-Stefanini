@@ -1,0 +1,69 @@
+<!-- ### REGISTER FORM ### -->
+<div ng-controller="CadastroController as vm" class="row justify-content-center align-items-center login-row" ng-init="vm.iniciar()">
+    <div class="col">
+        <div class="container mx-auto py-5 mt-5 jumbotron" style="width: 600px;">
+            <h3 class="text-center text-uppercase">Cadastro</h3>
+            <form name="vm.cadForm" ng-submit="vm.salvar()">
+                <div class="form-group">
+                    <label>Nome Completo</label>
+                    <input class="form-control" type="text" name="nomeCompleto" ng-model="vm.user.nome"
+                           ng-required="true" placeholder="Nome completo">
+                </div>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input class="form-control" type="text" name="cpf" ng-model="vm.user.cpf"
+                           ng-required="true" pattern="[0-9]{11}" placeholder="CPF (somente números)">
+                </div>
+                <div class="form-group">
+                    <label>E-mail</label>
+                    <input class="form-control" type="email" name="email" ng-model="vm.user.email"
+                           ng-required="true" placeholder="Endereço de e-mail">
+                </div>
+                <div class="form-group">
+                    <label>Contato</label>
+                    <input class="form-control" type="number" name="contato" ng-model="vm.user.contato"
+                           ng-required="true" placeholder="Contato">
+                </div>
+                <div class="form-group">
+                    <label>CEP</label>
+                    <input class="form-control" type="number" name="cep" ng-model="vm.user.cep"
+                           ng-required="true" placeholder="CEP">
+                    <button class="btn btn-warning" ng-click="vm.buscar(vm.user.cep)">Buscar</button>
+                </div>
+
+                <div class="form-group">
+                    <label>Logradouro</label>
+                    <input class="form-control" type="text" name="logradouro" ng-model="vm.user.logradouro"
+                           placeholder="Logradouro">
+                </div>
+
+                <div class="form-group">
+                    <label>Complemento</label>
+                    <input class="form-control" type="text" name="complemento" ng-model="vm.user.complemento"
+                           placeholder="Complemento">
+                </div>
+                
+                <div class="form-group">
+                    <label>Bairro</label>
+                    <input class="form-control" type="text" name="bairro" ng-model="vm.user.bairro"
+                           ng-required="true" placeholder="Bairro">
+                </div>
+
+                <div class="form-group">
+                    <label>Cidade</label>
+                    <input class="form-control" type="text" name="cidade" ng-model="vm.user.cidade"
+                           ng-required="true" placeholder="Cidade">
+                </div>
+                
+                <div class="form-group">
+                    <label>UF</label>
+                    <input class="form-control" type="text" name="uf" ng-model="vm.user.uf"
+                           ng-required="true" placeholder="UF">
+                </div>
+                <button class="btn btn-primary mb-1" type="submit">
+                    {{vm.botao}}
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
